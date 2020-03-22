@@ -1,0 +1,23 @@
+<form class="form-horizontal" [formGroup]="formLoginSignUp" >
+  <h3>
+      Cadastrar Novo Usuário
+  </h3>
+  <div fxFill fxLayout="column" class="card-content" fxLayoutAlign="space-around center" fxLayoutAlign.xs="stretch center">
+    <mat-form-field fxFill.xs appearance="outline">
+      <mat-label>Nome</mat-label>
+      <input formControlName="name" matInput type="text" maxlength="50" autocomplete="off" style="-webkit-box-shadow: 0 0 0px 1000px white inset;" placeholder="Nome do usuário">
+      <mat-error *ngIf="formLoginSignUp.controls['name'].invalid">{{ getErrorMessage('name') }}</mat-error>
+    </mat-form-field>
+    <mat-form-field fxFill.xs appearance="outline">
+      <mat-label>Email</mat-label>
+      <input formControlName="email" matInput type="text" maxlength="50" autocomplete="off" style="-webkit-box-shadow: 0 0 0px 1000px white inset;" placeholder="usuário@email">
+      <mat-error *ngIf="formLoginSignUp.controls['email'].invalid">{{ getErrorMessage('email') }}</mat-error>
+    </mat-form-field>
+    <div fxFill fxLayout="row"  fxLayout.xs="column" fxLayoutAlign="space-between center" fxLayoutAlign.xs="center stretch">
+      <button mat-button type="button" style="color: #6a6c70;" (click)="goBackToLogin()">Voltar</button>
+      <button [disabled]="formLoginSignUp.invalid" [ngClass]="{'mat-primary': formLoginSignUp.valid}" fxFlex mat-stroked-button type="button" (click)="doSignUp()">
+        Cadastrar
+      </button>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,23 @@
+<div fxLayout="row" fxLayoutAlign="center center" class="login-container">
+  <div fxLayout="column" class="card" fxLayoutAlign="space-between end">
+    <form *ngIf="!signUpView" class="form-horizontal" [formGroup]="formLogin" >
+      <h3>
+          Login Consultas Médicas
+      </h3>
+      <div fxFill fxLayout="column" class="card-content" fxLayoutAlign="space-around center" fxLayoutAlign.xs="stretch center">
+        <mat-form-field fxFill.xs appearance="outline">
+          <mat-label>Email</mat-label>
+          <input formControlName="username" matInput type="text" maxlength="50" autocomplete="off" style="-webkit-box-shadow: 0 0 0px 1000px white inset;" placeholder="usuário@email">
+          <mat-error *ngIf="formLogin.controls['username'].invalid">{{ getErrorMessage('username') }}</mat-error>
+        </mat-form-field>
+        <div fxFill fxLayout="row"  fxLayout.xs="column" fxLayoutAlign="space-between center" fxLayoutAlign.xs="center stretch">
+          <button mat-button type="button" style="color: #6a6c70;" (click)="signUp()">Cadastre-se</button>
+          <button [disabled]="formLogin.invalid" [ngClass]="{'mat-primary': formLogin.valid}" fxFlex mat-stroked-button type="button" (click)="doLogin()" routerLinkActive="router-link-active">
+            Entrar
+          </button>
+        </div>
+      </div>
+    </form>
+    <app-signup *ngIf="signUpView" (messageEvent)="backToLogin()"></app-signup>
+  </div>
+</div>

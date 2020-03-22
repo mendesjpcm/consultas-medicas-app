@@ -1,0 +1,208 @@
+/* @import "~@angular/material/prebuilt-themes/deeppurple-amber.css"; */
+/* @import "~@angular/material/prebuilt-themes/pink-bluegrey.css"; */
+/* @import "~@angular/material/prebuilt-themes/purple-green.css"; */
+/* @import "~@angular/material/prebuilt-themes/purple-green.css"; */
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('assets/fonts/Montserrat-Light.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Montserrat-Regular';
+  src: url('assets/fonts/Montserrat-Regular.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Montserrat-Bold';
+  src: url('assets/fonts/Montserrat-Bold.ttf') format('opentype');
+}
+
+body {
+  background-color: #f2f3f4;
+  margin: 0 auto;
+}
+
+.main-container {
+	/* margin: 0 auto; */
+  /* background-color: #f2f3f8; */
+}
+
+.container {
+	margin: 0 auto 70px;
+  max-width: 1500px;
+  padding: 0 20px;
+}
+
+.row {
+  padding: 15px;
+  margin: 20px 0px;
+  box-shadow: 0px 4px 11px 0px #00000045;
+  background-color: #ffffff;
+}
+
+/* TABLES */
+table{
+    width: 100%;
+}
+
+mat-form-field {
+  padding: 0 10px;
+}
+mat-toolbar-row,
+.mat-toolbar-row {
+  padding-right: 40px;
+  padding-left: 40px;
+}
+
+.mat-row {
+  min-height: 50px;
+}
+th.mat-header-cell {
+  font-size: 1.05em;
+}
+th.mat-header-cell.mat-column-actions,
+.mat-column-actions {
+  text-align: center;
+  min-width: 160px;
+}
+mat-slide-toggle.mat-slide-toggle,
+.mat-column-actions button {
+  margin: 0 4%;
+}
+
+/* BUTTONS */
+
+button.mat-stroked-button{
+  border-radius: 25px;
+  border: 2px solid currentColor;
+  margin: 10px;
+}
+button.mat-stroked-button.mat-button-base.mat-primary{
+  background-color: #2590cf;
+  color: white;
+}
+button.mat-stroked-button.mat-button-base.mat-primary:not([disabled]){
+  border: 2px solid #2590cf;
+}
+
+/* TITLES */
+.container-title {
+  font-family: Montserrat-Regular;
+  color: #4a4a4a;
+}
+
+.float-right {
+  display: flex;
+  flex-direction: row-reverse;
+  float: right;
+}
+
+/* MAT DIALOGS */
+
+mat-dialog-actions.mat-dialog-actions {
+  /* flex-flow: row-reverse; */
+}
+mat-dialog-actions.mat-dialog-actions div {
+  /* flex-flow: row-reverse; */
+  width: 100%;
+}
+mat-dialog-content.mat-dialog-content {
+  /* font-weight: 300; */
+}
+mat-dialog-container.mat-dialog-container {
+  max-width: 1000px;
+  /* min-width: 600px; */
+}
+
+
+button.float-right.closeButton.mat-icon-button.mat-button-base {
+  margin: 0px 0px 0px 50px;
+}
+/*  MENU */
+mat-toolbar.menu.mat-toolbar {
+  background-color: #2590cf;
+  font-family: Montserrat-Regular;
+  font-size: 14px;
+  font-weight: 300;
+}
+/* Diable overlay button Mat Icon */
+.mat-button-focus-overlay { background-color: transparent!important; }
+
+
+/** STEPPER COMPONENT **/
+.mat-stepper-label-position-bottom .mat-horizontal-stepper-header {
+  background-color: transparent;
+}
+
+
+.mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:first-child)::before,
+.mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:last-child)::after, [dir=rtl]
+.mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:first-child)::after, [dir=rtl]
+.mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:last-child)::before {
+  border-top-width: 1px;
+  border-top-style: solid;
+  content: '';
+  display: inline-block;
+  height: 0;
+  position: absolute;
+  top: 53px !important;
+  width: calc(40% - 20px)!important ;
+}
+
+.mat-step-icon {
+  border-radius: 50%;
+  height: 60px !important;
+  width: 60px !important;
+}
+.mat-stepper-label-position-bottom .mat-stepper-horizontal-line {
+  margin: 0;
+  min-width: 0;
+  position: relative;
+  top: 53px !important;
+}
+.mat-step-icon-content {
+  font-size: 1.5em;
+  font-family: Montserrat-Regular;
+}
+.mat-step-header .mat-step-icon-selected, .mat-step-header .mat-step-icon-state-done, .mat-step-header .mat-step-icon-state-edit {
+  background-color: #2590cf !important;
+}
+.mat-step-header .mat-step-icon-selected {
+  background-color: #0f6aa2 !important;
+  color: #fff;
+  font-size: 1.1em;
+}
+
+.mat-step-header .mat-step-icon {
+  /* background-color: #2590cf; */
+  color: #fff;
+}
+.mat-horizontal-stepper-header-container {
+  max-width: 1000px !important;
+  margin: 0 auto !important;
+}
+.mat-step-label {
+  font-size: 1.1em !important;
+  font-family: Montserrat-Regular;
+}
+
+.mat-stepper-horizontal-line ~ mat-step-header {
+  /* border-top-color: rgb(222, 9, 29) !important;
+  background-color: red; */
+}
+
+
+/**
+  HACKS
+*/
+
+.disabled {
+  filter: grayscale(100%) opacity(0.5);
+}
+
+mat-sidenav-container.mat-drawer-container.mat-sidenav-container {
+  background-color: transparent;
+}

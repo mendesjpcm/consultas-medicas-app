@@ -1,0 +1,53 @@
+<div class="container-title" style="margin-top: 10px;">
+	<h3>Médicos</h3>
+</div>
+<div class="row">
+  <mat-progress-bar *ngIf="loadingRegisterDoctor" mode="indeterminate"></mat-progress-bar>
+  <form [formGroup]="formRegisterDoctor">
+    <div fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign.xs="stretch" fxLayoutAlign="stretch">
+      <mat-form-field>
+        <mat-label>Nome</mat-label>
+        <input matInput type="text" autocomplete="off" style="-webkit-box-shadow: 0 0 0px 1000px white inset;" required
+          maxlength="50" id="name" placeholder="" formControlName="name">
+        <mat-error *ngIf="formRegisterDoctor.controls['name'].invalid">{{ getErrorMessage('name') }}</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>CRM</mat-label>
+        <input matInput type="text" autocomplete="off" style="-webkit-box-shadow: 0 0 0px 1000px white inset;" required
+          maxlength="8" id="crm" placeholder="" formControlName="crm">
+        <mat-error *ngIf="formRegisterDoctor.controls['crm'].invalid">{{ getErrorMessage('crm') }}</mat-error>
+      </mat-form-field>
+    </div>
+    <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="end stretch" fxLayoutAlign.xs="center stretch">
+      <button mat-stroked-button type="button" [disabled]="!formRegisterDoctor.valid && !loadingRegisterDoctor"
+        [ngClass]="{'mat-primary': formRegisterDoctor.valid && !loadingRegisterDoctor}" (click)="saveDoctor()">
+        Cadastrar
+      </button>
+    </div>
+  </form>
+</div>
+<div class="row">
+	<div style="margin-bottom: 10px">
+		<table mat-table [dataSource]="dataSource" matSort matSortActive="name" matSortDirection="asc">
+			<!-- name Column -->
+			<ng-container matColumnDef="name">
+				<th mat-header-cell *matHeaderCellDef mat-sort-header>Nome</th>
+				<td mat-cell *matCellDef="let element">{{element.name}}</td>
+			</ng-container>
+
+			<!-- CRM Column -->
+			<ng-container matColumnDef="crm">
+				<th mat-header-cell *matHeaderCellDef mat-sort-header>CRM</th>
+				<td mat-cell *matCellDef="let element">{{element.crm}}</td>
+      </ng-container>
+
+			<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+			<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+		</table>
+		<mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+
+		<mat-paginator [length]="dataSource.data.length" [pageIndex]="0" [pageSize]="20" [pageSizeOptions]="[5, 10, 20]"
+			[ngClass]="{'hidden: dataSource.data.length == 0': true}" [showFirstLastButtons]="true">
+		</mat-paginator>
+	</div>
+</div>

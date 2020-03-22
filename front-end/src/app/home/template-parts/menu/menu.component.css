@@ -1,0 +1,12 @@
+button.mat-button.mat-button-base {
+  font-family: Montserrat-Regular;
+  height: 100%;
+  font-weight: 300;
+  color: white;
+  letter-spacing: -0.14px;
+}
+button.mat-button.mat-button-base.menuActive {
+  background: #18689b81 -6px;
+  font-family: Montserrat-Bold;
+  font-weight: 600;
+}
