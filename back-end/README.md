@@ -66,7 +66,7 @@ Se a IDE utilizada for o IntelliJ, e o mesmo apresentar problemas com java (get 
 # Executar projeto
 
 ## Intellij
-Executar (Ctrl + Shift + F10) arquivo InvoicesApplication localizado em src -> main -> java -> com -> oxbike -> invoices
+Executar (Ctrl + Shift + F10) arquivo InvoicesApplication localizado em src -> main -> java -> com -> exampla -> medicalappointments
 
 ## Maven
 Pelo terminal, ir no diretório raiz do projeto e executar o comando:
